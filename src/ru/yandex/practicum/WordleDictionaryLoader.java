@@ -21,7 +21,7 @@ public class WordleDictionaryLoader {
 
             Set<String> fiveLetterWords = dictionaryReader.lines().map(WordleDictionary::normalize).filter(normalizedWord -> normalizedWord.length() == 5).filter(normalizedWord -> normalizedWord.chars().allMatch(Character::isLetter)).collect(Collectors.toSet());
 
-            log.println(String.format ("Загружено слов длиной 5 букв: %d", fiveLetterWords.size()));
+            log.println(String.format("Загружено слов длиной 5 букв: %d", fiveLetterWords.size()));
             return new WordleDictionary(fiveLetterWords);
 
         } catch (IOException exception) {
